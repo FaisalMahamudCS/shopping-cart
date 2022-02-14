@@ -127,15 +127,39 @@ function decrement(quantityID,productID){
  }
 
 
+ function total(){
+
+    var subtotal=document.getElementById('subtotal');
+    var totalprice=document.getElementById('total');
+    var tax=document.getElementById('tax');
+    
+    var sub=subtotal.innerText;
+    console.log(sub)
+    var iphone=document.getElementById('product-1');
+    var caseing=document.getElementById('iphone-price')
+      var total=parseInt(iphone.innerText)+parseInt(caseing.innerText);
+  console.log(total)
+
+var tax1=total/10;
+var totalPrice=total+total/10;
+console.log(totalPrice)
+subtotal.innerHTML=total;
+tax.innerHTML=tax1;
+totalprice.innerHTML=totalPrice;
+  }
+
+
 
 document.getElementById('decrement').addEventListener('click',function(){
 
 increment('quantity','product-1',1219,false)
+total()
 });
 
 
 document.getElementById('decrement-1').addEventListener('click',function(){
     increment('quantity-1','iphone-price',121,false)
+    total()
     });
     
     
@@ -147,25 +171,15 @@ document.getElementById('decrement-1').addEventListener('click',function(){
     document.getElementById('increment').addEventListener('click',function(){
         console.log('clicj')
 increment('quantity','product-1',1219,true)
+total()
         });
         
 
 document.getElementById('increment-case').addEventListener('click',function(){
    increment('quantity-1','iphone-price',121,true)
+   total()
     });
     
-    
-
-        
-        
-    
-
-
-
-
-
-
-
 
 
 
